@@ -44,7 +44,6 @@ class DraftListView(LoginRequiredMixin,ListView):
     def get_queryset(self):
         return Post.objects.filter(published_date__isnull=True).order_by('created_date')
 
-0
 class PostDeleteView(LoginRequiredMixin,DeleteView):
     model = Post
     success_url = reverse_lazy('blog:post_list')
